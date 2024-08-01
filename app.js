@@ -12,7 +12,18 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "public")));
 
 io.on("connection", function (socket) {
-    console.log("connected");
+    // sending received location to frontend
+    socket.on("send-location", function (data) {
+        io.emit("receive-location", {
+            id: socket.id,
+            ...data,
+        })
+    });
+
+    // handling on disconnected
+    socket.on("disconnect", function () {
+        io.emit("user-disconnected", socket.id);
+    })
 });
 
 app.get('/', (req, res) => {
