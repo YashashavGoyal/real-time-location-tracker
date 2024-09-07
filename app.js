@@ -33,6 +33,6 @@ app.get('/', (req, res) => {
 const port = 4000;
 // const host = '127.0.0.1';
 
-server.listen(port,, () => {
+server.listen(port, () => {
     console.log(`Server is started at http://127.0.0.1:${port}`);
 });
