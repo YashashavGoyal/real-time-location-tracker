@@ -34,5 +34,5 @@ const port = 5000;
 // const host = '127.0.0.1';
 
 server.listen(port, () => {
-    console.log(`Server is started at http://${host}:${port}`);
+    console.log(`Server is started at ${port}`);
 });
