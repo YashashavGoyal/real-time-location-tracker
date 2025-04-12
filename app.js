@@ -30,9 +30,9 @@ app.get('/', (req, res) => {
     res.render("index");
 });
 
-const port = 2024;
+const port = 5000;
 const host = '127.0.0.1';
 
-server.listen(port, host, () => {
+server.listen(port, () => {
     console.log(`Server is started at http://${host}:${port}`);
 });
